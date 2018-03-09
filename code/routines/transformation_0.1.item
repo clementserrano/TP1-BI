@@ -1,5 +1,7 @@
 package routines;
 
+import java.util.Date;
+
 /*
  * user specification: the function's comment should contain keys as follows: 1. write about the function's comment.but
  * it must be before the "{talendTypes}" key.
@@ -21,14 +23,14 @@ package routines;
 public class transformation {
 
     /**
-     * GpAge: not return value, only print "hello" + message.
+     * GpAge
      * 
      * 
-     * {talendTypes} int
+     * {talendTypes} String
      * 
      * {Category} User Defined
      * 
-     * {param} string("world") input: The string need to be printed.
+     * {param} int age
      * 
      * {example} GPAge(12) # "3-18 ans" !.
      */
@@ -46,6 +48,65 @@ public class transformation {
         	resultat = ">60 ans";
         }
         
+        return resultat;
+    }
+    
+    /**
+     * GpJour
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int
+     * 
+     * {example} GPDate(01-01-2009) # "Vendredi" !.
+     */
+    public static String GpJour(int dayOfWeek) {
+    	String resultat;
+        switch(dayOfWeek){
+	        case 1: resultat = "Lundi"; break;
+	        case 2: resultat = "Mardi"; break;
+	        case 3: resultat = "Mercredi"; break;
+	        case 4: resultat = "Jeudi"; break;
+	        case 5: resultat = "Vendredi"; break;
+	        case 6: resultat = "Samedi"; break;
+	        case 7: resultat = "Dimanche"; break;
+	        default: resultat = "Erreur : "+dayOfWeek; break;
+        }
+        return resultat;
+    }
+    
+    /**
+     * GpMois
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int
+     * 
+     * {example} GPDate(01-01-2009) # "Janvier" !.
+     */
+    public static String GpMois(int month) {
+    	String resultat;
+        switch(month){
+	        case 0: resultat = "Janvier"; break;
+	        case 1: resultat = "Février"; break;
+	        case 2: resultat = "Mars"; break;
+	        case 3: resultat = "Avril"; break;
+	        case 4: resultat = "Mai"; break;
+	        case 5: resultat = "Juin"; break;
+	        case 6: resultat = "Juillet"; break;
+	        case 7: resultat = "Août"; break;
+	        case 8: resultat = "Septembre"; break;
+	        case 9: resultat = "Octobre"; break;
+	        case 10: resultat = "Novembre"; break;
+	        case 11: resultat = "Décembre"; break;
+	        default: resultat = "Erreur : "+month; break;
+        }
         return resultat;
     }
 }
