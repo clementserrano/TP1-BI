@@ -1,5 +1,8 @@
 package routines;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 
 /*
@@ -107,6 +110,50 @@ public class transformation {
 	        case 11: resultat = "Décembre"; break;
 	        default: resultat = "Erreur : "+month; break;
         }
+        return resultat;
+    }
+    
+    /**
+     * GpSaison
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} String
+     * 
+     * {example} GPDate(01-01-2009) # "Hiver" !.
+     */
+    public static String GpSaison(Date date) {
+    	String resultat = "";
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    	
+    	try {
+	    	Calendar cal = Calendar.getInstance();
+	    	cal.setTime(date);
+	    	int year = cal.get(Calendar.YEAR);
+    	
+			Date hiver = sdf.parse("21-12-"+year);
+			Date printemps = sdf.parse("21-03-"+year);
+			Date ete = sdf.parse("21-06-"+year);
+			Date automne = sdf.parse("21-09-"+year);
+			
+			if((date.compareTo(hiver) == 0 || date.after(hiver)) && date.before(printemps)){
+	    		resultat = "Hiver";
+	    	}else if((date.compareTo(printemps) == 0 || date.after(printemps)) && date.before(ete)){
+	    		resultat = "Printemps";
+	    	}else if((date.compareTo(ete) == 0 || date.after(ete)) && date.before(automne)){
+	    		resultat = "Eté";
+	    	}else if((date.compareTo(automne) == 0 || date.after(automne)) && date.before(hiver)){
+	    		resultat = "Automne";
+	    	}else{
+	    		resultat = "Erreur : " + sdf.format(date);
+	    	}
+		} catch (ParseException e) {
+			resultat = e.getLocalizedMessage();
+		}
+    	
         return resultat;
     }
 }

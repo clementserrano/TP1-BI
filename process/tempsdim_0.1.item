@@ -172,7 +172,7 @@
         <mapperTableEntries name="TRIMESTRE_ANNEE" type="id_String" nullable="true"/>
         <mapperTableEntries name="MOIS" expression="transformation.GpMois(TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))) " type="id_String" nullable="true"/>
         <mapperTableEntries name="MOIS_ANNEE" expression="transformation.GpMois(TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))) + &quot; &quot; + TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d)) " type="id_String" nullable="true"/>
-        <mapperTableEntries name="SAISON" type="id_String" nullable="true"/>
+        <mapperTableEntries name="SAISON" expression="transformation.GpSaison(TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,row1.d)) " type="id_String" nullable="true"/>
         <mapperTableEntries name="NUM_JOUR_MOIS" expression="TalendDate.getPartOfDate(&quot;DAY_OF_MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d)) " type="id_Integer" nullable="true"/>
         <mapperTableEntries name="JOUR" expression="transformation.GpJour(TalendDate.getPartOfDate(&quot;DAY_OF_WEEK&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))) " type="id_String" nullable="true"/>
       </outputTables>
