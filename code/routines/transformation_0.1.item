@@ -139,13 +139,13 @@ public class transformation {
 			Date ete = sdf.parse("21-06-"+year);
 			Date automne = sdf.parse("21-09-"+year);
 			
-			if((date.compareTo(hiver) == 0 || date.after(hiver)) && date.before(printemps)){
+			if(date.before(printemps)){
 	    		resultat = "Hiver";
-	    	}else if((date.compareTo(printemps) == 0 || date.after(printemps)) && date.before(ete)){
+	    	}else if(date.compareTo(printemps) == 0 || date.before(ete)){
 	    		resultat = "Printemps";
-	    	}else if((date.compareTo(ete) == 0 || date.after(ete)) && date.before(automne)){
+	    	}else if(date.compareTo(ete) == 0 || date.before(automne)){
 	    		resultat = "Eté";
-	    	}else if((date.compareTo(automne) == 0 || date.after(automne)) && date.before(hiver)){
+	    	}else if(date.compareTo(automne) == 0 || date.before(hiver)){
 	    		resultat = "Automne";
 	    	}else{
 	    		resultat = "Erreur : " + sdf.format(date);
