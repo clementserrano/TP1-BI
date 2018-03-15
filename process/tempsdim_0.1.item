@@ -168,8 +168,8 @@
       <outputTables sizeState="INTERMEDIATE" name="temps">
         <mapperTableEntries name="DATE_ID" expression="row1.d " type="id_Date"/>
         <mapperTableEntries name="ANNEE" expression="TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d)) " type="id_String" nullable="true"/>
-        <mapperTableEntries name="TRIMESTRE" expression="" type="id_String" nullable="true"/>
-        <mapperTableEntries name="TRIMESTRE_ANNEE" type="id_String" nullable="true"/>
+        <mapperTableEntries name="TRIMESTRE" expression="(int) Math.ceil((TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))+1)/3.0) " type="id_String" nullable="true"/>
+        <mapperTableEntries name="TRIMESTRE_ANNEE" expression="((int) Math.ceil((TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))+1)/3.0)) + &quot; &quot; + TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d)) " type="id_String" nullable="true"/>
         <mapperTableEntries name="MOIS" expression="transformation.GpMois(TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))) " type="id_String" nullable="true"/>
         <mapperTableEntries name="MOIS_ANNEE" expression="transformation.GpMois(TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))) + &quot; &quot; + TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d)) " type="id_String" nullable="true"/>
         <mapperTableEntries name="SAISON" expression="transformation.GpSaison(TalendDate.parseDate(&quot;dd-MM-yyyy&quot;,row1.d)) " type="id_String" nullable="true"/>
