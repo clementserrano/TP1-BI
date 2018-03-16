@@ -1,4 +1,0 @@
-<?xml version="1.1" encoding="UTF-8"?>
-<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="((int) Math.ceil((TalendDate.getPartOfDate(&quot;MONTH&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))+1)/3.0)) + &quot; &quot; + TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd-MM-yyyy&quot;, row1.d))">
-  <variables name="row1.d" value="01-01-2009" talendType="id_Date" nullable="true"/>
-</expression:EMFExpression>

@@ -35,7 +35,7 @@ public class transformation {
      * 
      * {param} int age
      * 
-     * {example} GPAge(12) # "3-18 ans" !.
+     * {example} GpAge(12) # "3-18 ans" !.
      */
     public static String GpAge(int age) {
     	String resultat;
@@ -64,7 +64,7 @@ public class transformation {
      * 
      * {param} int
      * 
-     * {example} GPDate(01-01-2009) # "Vendredi" !.
+     * {example} GpJour(01-01-2009) # "Vendredi" !.
      */
     public static String GpJour(int dayOfWeek) {
     	String resultat;
@@ -91,7 +91,7 @@ public class transformation {
      * 
      * {param} int
      * 
-     * {example} GPDate(01-01-2009) # "Janvier" !.
+     * {example} GpMois(01-01-2009) # "Janvier" !.
      */
     public static String GpMois(int month) {
     	String resultat;
@@ -123,7 +123,7 @@ public class transformation {
      * 
      * {param} String
      * 
-     * {example} GPDate(01-01-2009) # "Hiver" !.
+     * {example} GpSaison(01-01-2009) # "Hiver" !.
      */
     public static String GpSaison(Date date) {
     	String resultat = "";
@@ -155,5 +155,78 @@ public class transformation {
 		}
     	
         return resultat;
+    }
+    
+    /**
+     * GpDate
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int anee, int mois, int jour
+     * 
+     * {example} GpDate(2009,1,1) # "01-01-2009" !.
+     */
+    public static Date GpDate(int annee, int mois, int jour) {
+    	String resultat = "";
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+    	
+    	Calendar cal = Calendar.getInstance();
+    	cal.set(annee, mois - 1, jour);
+    	Date date = cal.getTime();
+    	resultat = sdf.format(date);    	
+    	
+    	try{
+    		return sdf.parse(resultat);
+    	}catch(ParseException e){
+    		e.printStackTrace();
+    		return null;
+    	}
+    }
+    
+    /**
+     * GpDpt
+     * 
+     * 
+     * {talendTypes} int
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int
+     * 
+     * {example} GpDpt(31990) # "31" !.
+     */
+    public static int GpDpt(int codePostal) {
+    	String code = codePostal+"";
+    	if(code.length() == 4){
+    		code = "0" + code;
+    	}
+    	return Integer.valueOf(code.substring(0,2));
+    }
+    
+    /**
+     * GpDptStr
+     * 
+     * 
+     * {talendTypes} int
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int
+     * 
+     * {example} GpDpt(31990) # "31" !.
+     */
+    public static String GpDptStr(int codePostal) {
+    	String code = codePostal+"";
+    	if(code.length() == 4){
+    		code = "0" + code;
+    	}
+    	if(code.length() >= 2){
+    		return code.substring(0,2);
+    	}else{
+    		return code;
+    	}
     }
 }

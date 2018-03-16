@@ -1,0 +1,47 @@
+<?xml version="1.1" encoding="UTF-8"?>
+<expression:EMFExpression xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:expression="http:///expression.ecore" id="tMap_1=>" expression="row3.ANNEE_DEBUT_SOINS - TalendDate.getPartOfDate(&quot;YEAR&quot;,TalendDate.parseDate(&quot;dd/MM/yy&quot;,row1.DATE_NAISSANCE_BENEFICIAIRE))">
+  <variables name="row1.NUM_ADHESION_NORMALISE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.NUM_BENEFICIAIRE_UNIQUE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.DATE_NAISSANCE_ASSURE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.CODE_POSTAL" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.EXERCICE_PAIEMENT" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.NUM_BENEFICIAIRE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.TYPE_BENEFICIAIRE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.DATE_NAISSANCE_BENEFICIAIRE" value="01-01-2009" talendType="id_String" nullable="true"/>
+  <variables name="row1.CODE_PROFESSION" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.CODE_PRODUIT" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.CODE_FRACTIONNEMENT" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.CODE_GARANTIE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.FORMULE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row1.PRIMES_ACQUISES" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.CODE_AGENT" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.CODE_REGION" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row1.PRIME_GARANTIE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.NUM_SINISTRE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.NUM_ADHESION" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.ACTE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.DESIGNATION_ACTE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.LIBELLE_BAREME" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row3.NUM_BENEFICIAIRE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.NUM_BENEFICIAIRE_SINISTRE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.JOUR_DEBUT_SOINS" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.MOIS_DEBUT_SOINS" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.ANNEE_DEBUT_SOINS" value="2010" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.JOUR_PAIEMENT" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.MOIS_PAIEMENT" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.ANNEE_PAIEMENT" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row3.FRAIS_REEL_ASSURE" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row3.MONTANT_SECU" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row3.MONTANT_REMBOURSE" value="null" talendType="id_Float" nullable="true"/>
+  <variables name="row2.NUM_BENEFICIAIRE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row2.SEXE" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row2.REGIME_SOCIAL" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row7.NUM_BENEFICIAIRE_UNIQUE" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row7.EXERCICE_PAIEMENT" value="null" talendType="id_Integer" nullable="true"/>
+  <variables name="row4.date" value="null" talendType="id_Date" nullable="true"/>
+  <variables name="row4.departement" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row4.tempmin" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row4.tempmax" value="null" talendType="id_Double" nullable="true"/>
+  <variables name="row4.ventmax" value="null" talendType="id_String" nullable="true"/>
+  <variables name="row4.precip" value="null" talendType="id_String" nullable="true"/>
+</expression:EMFExpression>
