@@ -268,7 +268,7 @@
       <varTables sizeState="INTERMEDIATE" name="Var" minimized="true"/>
       <outputTables sizeState="INTERMEDIATE" name="adhesion_beneficiaire">
         <mapperTableEntries name="FORMULE" expression="row1.FORMULE " type="id_String" nullable="true"/>
-        <mapperTableEntries name="CODE_PROFESSION" expression="row1.CODE_PROFESSION.charAt(0)+&quot;&quot; " type="id_String" nullable="true"/>
+        <mapperTableEntries name="CODE_PROFESSION" expression="row1.CODE_PROFESSION" type="id_String" nullable="true"/>
         <mapperTableEntries name="SEXE" expression="row2.SEXE " type="id_String" nullable="true"/>
         <mapperTableEntries name="TYPE_BENEFICIAIRE" expression="row1.TYPE_BENEFICIAIRE " type="id_String" nullable="true"/>
       </outputTables>
@@ -364,16 +364,16 @@
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tUniqRow_1" show="false"/>
     <elementParameter field="TABLE" name="UNIQUE_KEY">
       <elementValue elementRef="SCHEMA_COLUMN" value="FORMULE"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="CODE_PROFESSION"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="SEXE"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
       <elementValue elementRef="SCHEMA_COLUMN" value="TYPE_BENEFICIAIRE"/>
-      <elementValue elementRef="KEY_ATTRIBUTE" value="false"/>
+      <elementValue elementRef="KEY_ATTRIBUTE" value="true"/>
       <elementValue elementRef="CASE_SENSITIVE" value="false"/>
     </elementParameter>
     <elementParameter field="CHECK" name="ONLY_ONCE_EACH_DUPLICATED_KEY" value="false"/>
@@ -479,7 +479,7 @@
         <mapperTableEntries name="TYPE_BENEFICIAIRE" type="id_String" nullable="true"/>
       </inputTables>
       <inputTables sizeState="INTERMEDIATE" name="row4" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
-        <mapperTableEntries name="Code" expression="row3.CODE_PROFESSION " type="id_String" nullable="true"/>
+        <mapperTableEntries name="Code" expression="row3.CODE_PROFESSION.charAt(0)+&quot;&quot; " type="id_String" nullable="true"/>
         <mapperTableEntries name="Libelle" expression="" type="id_String" nullable="true"/>
       </inputTables>
     </nodeData>

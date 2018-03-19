@@ -181,8 +181,13 @@ public class transformation {
     	try{
     		return sdf.parse(resultat);
     	}catch(ParseException e){
-    		e.printStackTrace();
-    		return null;
+    		System.out.println(e.getMessage());
+    		try{
+    			return sdf.parse("01-01-2009");
+    		}catch(ParseException e1){
+    			e1.printStackTrace();
+    			return null;
+    		}
     	}
     }
     
@@ -210,7 +215,7 @@ public class transformation {
      * GpDptStr
      * 
      * 
-     * {talendTypes} int
+     * {talendTypes} String
      * 
      * {Category} User Defined
      * 
@@ -227,6 +232,61 @@ public class transformation {
     		return code.substring(0,2);
     	}else{
     		return code;
+    	}
+    }
+    
+    /**
+     * GpDptStrInt
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int
+     * 
+     * {example} GpDpt(1990) # "1" !.
+     */
+    public static String GpDptStrInt(int codePostal) {
+    	String code = codePostal+"";
+    	if(code.length() > 4){
+    		return code.substring(0,2);
+    	}else{
+    		return code.substring(0,1);
+    	}
+    }
+    
+    /**
+     * GpDate2
+     * 
+     * 
+     * {talendTypes} String
+     * 
+     * {Category} User Defined
+     * 
+     * {param} int anee, int mois, int jour
+     * 
+     * {example} GpDate(2009,1,1) # "01/01/2009" !.
+     */
+    public static Date GpDate2(int annee, int mois, int jour) {
+    	String resultat = "";
+    	SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+    	
+    	Calendar cal = Calendar.getInstance();
+    	cal.set(annee, mois - 1, jour);
+    	Date date = cal.getTime();
+    	resultat = sdf.format(date);    	
+    	
+    	try{
+    		return sdf.parse(resultat);
+    	}catch(ParseException e){
+    		System.out.println(e.getMessage());
+    		try{
+    			return sdf.parse("01/01/2009");
+    		}catch(ParseException e1){
+    			e1.printStackTrace();
+    			return null;
+    		}
     	}
     }
 }

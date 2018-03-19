@@ -124,8 +124,6 @@
     <elementParameter field="TEXT" name="USER" value="&quot;INF4A03&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="j0wPSDL32jzEZ/a44AZfcg=="/>
     <elementParameter field="TEXT" name="JDBC_URL" value="&quot;jdbc:oracle:oci:/@talend&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_0KeEQB4BEeiB-_Rja5FP1g - ADHESION_DETAIL" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;ADHESION_DETAIL&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -324,20 +322,20 @@
         <mapperTableEntries name="CODE_REGION" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="PRIME_GARANTIE" type="id_String" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row3" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
+      <inputTables sizeState="INTERMEDIATE" name="row3" activateCondensedTool="true" matchingMode="ALL_ROWS" lookupMode="LOAD_ONCE" innerJoin="true">
         <mapperTableEntries name="NUM_SINISTRE" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="NUM_ADHESION" expression="row1.NUM_ADHESION_NORMALISE " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries name="NUM_ADHESION" expression="" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="ACTE" expression="" type="id_String" nullable="true"/>
         <mapperTableEntries name="DESIGNATION_ACTE" type="id_String" nullable="true"/>
-        <mapperTableEntries name="LIBELLE_BAREME" type="id_String" nullable="true"/>
-        <mapperTableEntries name="NUM_BENEFICIAIRE" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="NUM_BENEFICIAIRE_SINISTRE" expression="row1.NUM_BENEFICIAIRE_UNIQUE " type="id_Integer" nullable="true" operator="="/>
-        <mapperTableEntries name="JOUR_DEBUT_SOINS" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="LIBELLE_BAREME" expression="" type="id_String" nullable="true"/>
+        <mapperTableEntries name="NUM_BENEFICIAIRE" expression="" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="NUM_BENEFICIAIRE_SINISTRE" expression="" type="id_Integer" nullable="true"/>
+        <mapperTableEntries name="JOUR_DEBUT_SOINS" expression="" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="MOIS_DEBUT_SOINS" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="ANNEE_DEBUT_SOINS" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="JOUR_PAIEMENT" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="MOIS_PAIEMENT" type="id_Integer" nullable="true"/>
-        <mapperTableEntries name="ANNEE_PAIEMENT" expression="row1.EXERCICE_PAIEMENT " type="id_Integer" nullable="true" operator="="/>
+        <mapperTableEntries name="ANNEE_PAIEMENT" expression="" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="FRAIS_REEL_ASSURE" expression="" type="id_Float" nullable="true"/>
         <mapperTableEntries name="MONTANT_SECU" expression="" type="id_Float" nullable="true"/>
         <mapperTableEntries name="MONTANT_REMBOURSE" expression="" type="id_Float" nullable="true"/>
@@ -351,9 +349,9 @@
         <mapperTableEntries name="NUM_BENEFICIAIRE_UNIQUE" expression="row1.NUM_BENEFICIAIRE_UNIQUE" type="id_Integer" nullable="true"/>
         <mapperTableEntries name="EXERCICE_PAIEMENT" expression="" type="id_Integer" nullable="true"/>
       </inputTables>
-      <inputTables sizeState="INTERMEDIATE" name="row4" matchingMode="UNIQUE_MATCH" lookupMode="LOAD_ONCE">
-        <mapperTableEntries name="date" type="id_Date" nullable="true"/>
-        <mapperTableEntries name="departement" expression="transformation.GpDptStr(row1.CODE_POSTAL) " type="id_String" nullable="true" operator="="/>
+      <inputTables sizeState="INTERMEDIATE" name="row4" activateCondensedTool="true" matchingMode="ALL_MATCHES" lookupMode="LOAD_ONCE" innerJoin="true">
+        <mapperTableEntries name="date" expression="transformation.GpDate2(row3.ANNEE_DEBUT_SOINS,row3.MOIS_DEBUT_SOINS,row3.JOUR_DEBUT_SOINS) " type="id_Date" nullable="true"/>
+        <mapperTableEntries name="departement" expression="transformation.GpDptStrInt(row1.CODE_POSTAL) " type="id_String" nullable="true" operator="="/>
         <mapperTableEntries name="tempmin" type="id_Double" nullable="true"/>
         <mapperTableEntries name="tempmax" type="id_Double" nullable="true"/>
         <mapperTableEntries name="ventmax" type="id_String" nullable="true"/>
@@ -379,8 +377,6 @@
     <elementParameter field="TEXT" name="USER" value="&quot;INF4A03&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="j0wPSDL32jzEZ/a44AZfcg=="/>
     <elementParameter field="TEXT" name="JDBC_URL" value="&quot;jdbc:oracle:oci:/@talend&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_0KeEQB4BEeiB-_Rja5FP1g - PRESTATIONS_SANTE" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;PRESTATIONS_SANTE&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -506,8 +502,6 @@
     <elementParameter field="TEXT" name="USER" value="&quot;INF4A03&quot;"/>
     <elementParameter field="PASSWORD" name="PASS" value="j0wPSDL32jzEZ/a44AZfcg=="/>
     <elementParameter field="TEXT" name="JDBC_URL" value="&quot;jdbc:oracle:oci:/@talend&quot;" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:SCHEMA_TYPE" value="REPOSITORY" show="false"/>
-    <elementParameter field="TECHNICAL" name="SCHEMA:REPOSITORY_SCHEMA_TYPE" value="_0KeEQB4BEeiB-_Rja5FP1g - BENEFICIAIRE" show="false"/>
     <elementParameter field="DBTABLE" name="TABLE" value="&quot;BENEFICIAIRE&quot;"/>
     <elementParameter field="QUERYSTORE_TYPE" name="QUERYSTORE" value="&quot;&quot;"/>
     <elementParameter field="TECHNICAL" name="QUERYSTORE:REPOSITORY_QUERYSTORE_TYPE" value="" show="false"/>
@@ -690,7 +684,7 @@
     </elementParameter>
     <elementParameter field="TABLE" name="OPERATIONS">
       <elementValue elementRef="OUTPUT_COLUMN" value="EXERCICE_PAIEMENT"/>
-      <elementValue elementRef="FUNCTION" value="count"/>
+      <elementValue elementRef="FUNCTION" value="min"/>
       <elementValue elementRef="INPUT_COLUMN" value="EXERCICE_PAIEMENT"/>
       <elementValue elementRef="IGNORE_NULL" value="false"/>
     </elementParameter>

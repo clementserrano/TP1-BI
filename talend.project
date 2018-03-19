@@ -195,8 +195,6 @@
       <relatedItems xmi:id="_v9bETCjyEeiyTsfRux2lKQ" id="TalendStringUtil" version="Latest" type="routine"/>
       <relatedItems xmi:id="_v9bETyjyEeiyTsfRux2lKQ" id="_OFKbQCjwEeiyTsfRux2lKQ - metadata" version="Latest" type="schema"/>
       <relatedItems xmi:id="_w_5RECj2EeiyTsfRux2lKQ" id="_0KeEQB4BEeiB-_Rja5FP1g - ADHESION_DETAIL" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_w_5RESj2EeiyTsfRux2lKQ" id="_0KeEQB4BEeiB-_Rja5FP1g - PRESTATIONS_SANTE" version="Latest" type="schema"/>
-      <relatedItems xmi:id="_w_5REij2EeiyTsfRux2lKQ" id="_0KeEQB4BEeiB-_Rja5FP1g - BENEFICIAIRE" version="Latest" type="schema"/>
       <relatedItems xmi:id="_WqA3kCj4EeiyTsfRux2lKQ" id="transformation" version="Latest" type="routine"/>
     </ItemsRelations>
     <migrationTask xmi:id="_Bg3acB3-EeiB-_Rja5FP1g" id="org.talend.designer.core.ui.preferences.migration.ChangeMysqlVersionForProjectSetting" breaks="5.2.0" version="5.1.3" status="ok"/>
